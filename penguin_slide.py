@@ -2,7 +2,7 @@ import math
 import random
 import sys
 from dataclasses import dataclass
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 import pygame
 
@@ -35,7 +35,7 @@ MIN_LAUNCH_SPEED = 140.0
 class Terrain:
     """Layered sine waves to create rolling hills."""
 
-    def __init__(self, base_height: float = HEIGHT * 0.65, seed: int | None = None):
+    def __init__(self, base_height: float = HEIGHT * 0.65, seed: Optional[int] = None):
         rng = random.Random(seed)
         self.base_height = base_height
         self.waves: List[Tuple[float, float, float]] = []
